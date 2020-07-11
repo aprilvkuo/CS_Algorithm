@@ -24,7 +24,7 @@ bool Trie::delete_word(const string &s) {
 
     Trie *node  = this;
     for (int i = 0; i < s.size(); i++) {
-        Trie *tmp = node->child[s[i]-'a'];
+        Trie *tmp = node->child[s[i]];
         if (tmp == nullptr) {
             return true;
         }
@@ -32,7 +32,7 @@ bool Trie::delete_word(const string &s) {
         if (tmp->cnt == 0) {
             printf("[Trie] delete word [%s]  successfully when char [%c]\n", s.c_str(), s[i]);
             delete tmp;
-            node->child[s[i]-'a'] = nullptr;
+            node->child[s[i]] = nullptr;
             return true;
         }
         node = tmp;
@@ -47,10 +47,10 @@ bool Trie::insert_word(const string &s) {
     }
     Trie *tmp  = this;
     for (int i = 0; i < s.size(); i++) {
-        if (tmp->child[s[i]-'a'] == nullptr) {
-            tmp->child[s[i]-'a'] = new Trie();
+        if (tmp->child[s[i]] == nullptr) {
+            tmp->child[s[i]] = new Trie();
         }
-        tmp = tmp->child[s[i]-'a'];
+        tmp = tmp->child[s[i]];
         tmp->cnt++;
     }
     tmp->is_end = 1;
@@ -61,7 +61,7 @@ bool Trie::insert_word(const string &s) {
 bool Trie::search_word(const string &s, int mode) {
     Trie *tmp  = this;
     for (int i = 0; i < s.size(); i++) {
-        tmp = tmp->child[s[i]-'a'];
+        tmp = tmp->child[s[i]];
         if (tmp == nullptr) {
             return false;
         }

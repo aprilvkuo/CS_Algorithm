@@ -10,7 +10,7 @@
 
 using namespace std;
 
-const int MAX_CHILD_NUM = 128;
+static const int MAX_CHILD_NUM = 128;
 
 class Trie
 {
