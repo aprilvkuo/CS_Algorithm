@@ -7,10 +7,11 @@
 #include <algorithm>
 #include <assert.h>
 //#include <glog/logging.h>
+//http://www.hankcs.com/program/java/%e5%8f%8c%e6%95%b0%e7%bb%84trie%e6%a0%91doublearraytriejava%e5%ae%9e%e7%8e%b0.html
 
 using namespace std;
 
-static const int MAX_CHILD_NUM = 128;
+const int MAX_CHILD_NUM = 128;
 
 class Trie
 {
