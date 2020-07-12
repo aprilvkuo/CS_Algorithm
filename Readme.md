@@ -27,6 +27,10 @@ static std::vector<int> kmp_match_all(const std::string &query, const std::strin
 // return : the begin position of query of all matched patterns
 ```
 
+## 1.3. AC
+
+## 1.4. RB TREE
+
 # 2. Sort
 [Sort Code](./include/Sort.h): ./include/Sort.h
 
@@ -36,5 +40,20 @@ static std::vector<int> kmp_match_all(const std::string &query, const std::strin
 static void quick_sort(std::vector<int>& nums, int mode=0); // 快排， mode 0、1表示不同的实现方式
 ```
 
+## 2.2. Heap Sort
 
+# 3. Tree
+
+## 3.1. Basic Operator 
+
+```cpp
+   static TreeNode* build_tree(std::vector<std::string> data);
+   // 通过vector进行建树， 按层建数， 不存在的节点为“NULL”
+   static void pre_traverse(TreeNode *root, int mode=0);
+   // 先序遍历， mode为0， 表示递归遍历； mode为1， 表示非递归遍历
+   static void mid_traverse(TreeNode *root, int mode=0);
+   // 中序遍历， mode为0， 表示递归遍历； mode为1， 表示非递归遍历
+   static void suf_traverse(TreeNode *root, int mode=0);
+   // 后序遍历， mode为0， 表示递归遍历； mode为1， 表示非递归遍历
+```
 

@@ -4,6 +4,7 @@
 #include "vector"
 #include "KMP.h"
 #include "Utility.h"
+#include "TreeBase.h"
 
 using namespace std;
 
@@ -46,10 +47,26 @@ void test_trie() {
     cout << "find prefix `hel` result is:" << ret << endl;
 }
 
+void test_tree() {
+    std::vector<std::string> data = {"1", "2", "3", "NULL", "5", "6", "NULL"};
+    TreeNode *tree_data = TreeMethod::build_tree(data);
+    printf("pre_traverse\nRecursive:\n");
+    TreeMethod::pre_traverse(tree_data, 0);
+    printf("\nUnRecursive:\n");
+    TreeMethod::pre_traverse(tree_data, 1);
+    printf("\nmid_traverse\nRecursive:\n");
+    TreeMethod::mid_traverse(tree_data, 0);
+    printf("\nUnRecursive:\n");
+    TreeMethod::mid_traverse(tree_data, 1);
+    printf("\nsuf_traverse\nRecursive:\n");
+    TreeMethod::suf_traverse(tree_data, 0);
+    printf("\nUnRecursive:\n");
+}
 int main()
 {
-    test_quick_sort();
+//    test_quick_sort();
 //    test_trie();
-    test_kmp();
+//    test_kmp();
+    test_tree();
     return 0;
 }

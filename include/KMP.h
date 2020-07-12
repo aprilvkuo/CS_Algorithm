@@ -18,6 +18,7 @@ public:
     // ret code of -1 means: there is no match res
     // ret code of k means : the begin position of query of first matched pattern
     static std::vector<int> kmp_match_all(const std::string &query, const std::string &word);
+    // return : the begin position of query of all matched patterns
 
 private:
     static std::vector<int> build_next_(const std::string &word);
