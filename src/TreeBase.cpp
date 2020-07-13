@@ -106,19 +106,28 @@ void TreeMethod::suf_traverse(TreeNode *root, int mode) {
         suf_traverse(root->right);
         printf("%lf,", root->value);
     } else {
-        std::vector<TreeNode*> stack;
-        stack.push_back(root);
-        while (stack.size() != 0) {
-            auto tmp = stack.back();
-            stack.pop_back();
+        std::vector<TreeNode*> stack_1;
+        std::vector<TreeNode*> stack_2;
+        stack_1.push_back(root);
+        while (stack_1.size() != 0) {
+            auto tmp = stack_1.back();
+            stack_1.pop_back();
             if (tmp == nullptr) {
                 continue;
             } else {
-                printf("%lf,", tmp->value);
-                stack.push_back(tmp->right);
-                stack.push_back(tmp->left);
+                stack_2.push_back(tmp);
+
+
+                stack_1.push_back(tmp->left);
+                stack_1.push_back(tmp->right);
             }
         }
+        while (stack_2.size() != 0) {
+            auto tmp = stack_2.back();
+            printf("%lf,", tmp->value);
+            stack_2.pop_back();
+        }
+
     }
 
 }

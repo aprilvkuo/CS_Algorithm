@@ -45,6 +45,7 @@ static void quick_sort(std::vector<int>& nums, int mode=0); // 快排， mode 0�
 # 3. Tree
 
 ## 3.1. Basic Operator 
+[Tree Basic Code](./include/TreeBase.h): ./include/TreeBase.h
 
 ```cpp
    static TreeNode* build_tree(std::vector<std::string> data);
