@@ -18,6 +18,21 @@ void test_quick_sort() {
 //    }
 }
 
+
+void test_heap_sort() {
+    Sort s_item = Sort();
+    vector<int> a = {3, 5, 1, 3, 2, 23, 112, 1, 2};
+    s_item.heapify(a);
+    print_vector<int>(a);
+    s_item.heappush(a, 0);
+    print_vector<int>(a);
+    s_item.heappop(a);
+    print_vector<int>(a);
+//    for (auto &item: a) {
+//        cout << item << endl;
+//    }
+}
+
 void test_kmp() {
     KMP kmp_itesm = KMP();
     string query = "BBCABCDABABCDABCDABDE";
@@ -61,12 +76,14 @@ void test_tree() {
     printf("\nsuf_traverse\nRecursive:\n");
     TreeMethod::suf_traverse(tree_data, 0);
     printf("\nUnRecursive:\n");
+    TreeMethod::suf_traverse(tree_data, 1);
 }
 int main()
 {
 //    test_quick_sort();
 //    test_trie();
 //    test_kmp();
-    test_tree();
+//    test_tree();
+    test_heap_sort();
     return 0;
 }

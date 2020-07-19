@@ -41,7 +41,19 @@ static void quick_sort(std::vector<int>& nums, int mode=0); // 快排， mode 0�
 ```
 
 ## 2.2. Heap Sort
-
+```cpp
+/* 默认使用最小堆 */
+/*建立堆*/
+static void heapify(vector<int> &data);
+/*向下调整堆*/
+static void heapify(vector<int> &data, int index, int max_size);
+/*往堆加入一个item， 并保持堆的特性*/
+static void heappush(vector<int> &data, int item);
+/* 从堆顶弹出一个元素， 并保持堆的特性， 最小堆*/
+static int heappop(vector<int> &data);
+/* 堆排序 */
+void heap_sort(vector<int> &data);
+```
 # 3. Tree
 
 ## 3.1. Basic Operator 
